@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug  3 11:23:48 2020
+
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+import time
+mc=Minecraft.create()
+time.sleep(5)
+
+
+
+
+x,y,z=mc.player.getTilePos()
+
+
+
+
+
+
+
+mc.player.setTilePos(x,y,z)
+time.sleep(0.5)
+y=y+1
+mc.player.setTilePos(x,y,z)
+time.sleep(0.5)
+y=y+1
+mc.player.setTilePos(x,y,z)
+time.sleep(0.5)
+y=y+1
+
+
+
+
+
+
+
+print(mc.player.getTilePos())
+
+x=100
+y=100
+z=110
+
+x=45.7
+y=89.5
+z=98.55
+mc.player.setPos(x,y,z)                 
+
+while True:
+    print("skr")
+    
+while False:
+        print("fggrd")
+        
+        
+while True:
+    mc.postToChat("skr")        
+
+
+t=0
+while True:
+    t=t+1
+    mc.postToChat("第" + str(t) + "次")
+    
