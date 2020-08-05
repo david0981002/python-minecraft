@@ -1,1 +1,86 @@
 
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug  5 08:48:43 2020
+
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+x,y,z,=mc.player.getTilePos()
+mc.setSign(x,y,z,63,0,"david's","","","house")
+
+
+
+
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+import random
+import time 
+while True:
+    x,y,z,=mc.player.getTilePos()
+a=mc.setSign
+
+
+
+
+
+
+while True:
+    hits=mc.events.pollProjectileHits()
+    if len(hits)>0:
+        hit=hits[0]
+        x,y,z=hit.pos.x,hit.pos.y,hit.pos.z
+        mc.createExplosion(x,y,z,5)
+
+
+
+
+while True:
+    hits=mc.events.pollProjectileHits()
+    if len(hits)>0:
+        hit=hits[0]
+        x,y,z=hit.pos.x,hit.pos.y,hit.pos.z
+        mc.player.setTilePos(x,y,z)
+        mc.spawnEntity(x,y,z,99)
+import random
+import time
+
+pos = mc.player.getPos()
+while True:
+    x=pos.x+random.uniform(-10,10)
+    z=pos.z+random.uniform(-10,10)
+    y=pos.y+30
+    mc.spawnEntity(x,y,z,28)
+    time.sleep(0.1)
+
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+x,y,z,=mc.player.getTilePos()
+for i in range(5):
+    color = random.randrange(0,9)
+    mc.setBlocks(x+i,y-1,z+i,x+i+2,y-1,z+i,57,color)
+    
+
+
+
+x,y,z,=mc.player.getTilePos()
+def plantTree(x,y,z):
+    mc.setBlocks(x-1,y+3,z-1,x+1,y+5,z+1,161)
+    mc.setBlocks(x,y,z,x,y+4,z,17)
+
+plantTree(x,y,z)
+
+
+
+
+def plantTree(x,y,z):
+    mc.setBlocks(x-1,y+3,z-1,x+1,y+5,z+1,57)
+    mc.setBlocks(x,y,z,x,y+4,z,57)
+for i in range(5):
+    for j in range(5):
+        for k in range(5):
+            plantTree(x+i*5,y+j*5,z+k*5)
