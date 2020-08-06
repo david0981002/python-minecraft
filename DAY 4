@@ -1,1 +1,296 @@
 
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  6 08:26:05 2020
+
+@author: D305
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug  5 08:48:43 2020
+
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+x,y,z,=mc.player.getTilePos()
+mc.setSign(x,y,z,63,0,"david's","","","house")
+
+
+
+
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+import random
+import time 
+while True:
+    x,y,z,=mc.player.getTilePos()
+a=mc.setSign
+
+
+
+
+
+
+while True:
+    hits=mc.events.pollProjectileHits()
+    if len(hits)>0:
+        hit=hits[0]
+        x,y,z=hit.pos.x,hit.pos.y,hit.pos.z
+        mc.createExplosion(x,y,z,5)
+
+
+
+
+while True:
+    hits=mc.events.pollProjectileHits()
+    if len(hits)>0:
+        hit=hits[0]
+        x,y,z=hit.pos.x,hit.pos.y,hit.pos.z
+        mc.player.setTilePos(x,y,z)
+        mc.spawnEntity(x,y,z,99)
+import random
+import time
+
+pos = mc.player.getPos()
+while True:
+    x=pos.x+random.uniform(-10,10)
+    z=pos.z+random.uniform(-10,10)
+    y=pos.y+30
+    mc.spawnEntity(x,y,z,28)
+    time.sleep(0.1)
+
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+x,y,z,=mc.player.getTilePos()
+for i in range(5):
+    color = random.randrange(0,9)
+    mc.setBlocks(x+i,y-1,z+i,x+i+2,y-1,z+i,57,color)
+    
+
+
+
+x,y,z,=mc.player.getTilePos()
+def plantTree(x,y,z):
+    mc.setBlocks(x-1,y+3,z-1,x+1,y+5,z+1,161)
+    mc.setBlocks(x,y,z,x,y+4,z,17)
+
+plantTree(x,y,z)
+
+
+
+
+
+
+
+
+from mcpi.minecraft import Minecraft
+x,y,z,=mc.player.getTilePos()
+def plantTree(x,y,z):
+mc=Minecraft.create()
+
+    mc.setBlocks(x-1,y+3,z-1,x+1,y+5,z+1,57)
+    mc.setBlocks(x,y,z,x,y+4,z,57)
+    
+    
+
+x,y,z,=mc.player.getTilePos()
+for i in range(20):
+    for j in range(20):
+        for k in range(20):
+            plantTree(x+i*5,y+i*j,z+i*k)
+
+
+
+
+plantTree(x,y,z)
+
+
+line1=[]
+line2=[]
+line3=[]
+for i in range(1,4):
+    line1.append(1*i)
+    line2.append(2*i) 
+    line3.append(3*i) 
+print(line1,line2,line3)    
+x,y,z,=mc.player.getTilePos()
+mc.setSign(x,y,z,63,0,strline1,str(line2),str(line3,)
+
+
+number=1
+x,y,z=mc.player.getPos()
+for i in range(8):
+    for j in range(number):
+        mc.spawnEntity(x,y,z,63)
+    number=number*2
+    mc.postToChat("這次生成了"+str(number)+"隻終界龍")
+        
+
+from mcpi.minecraft import Minecraft
+import random
+mc=Minecraft.create()
+x,y,z,=mc.player.getTilePos()
+for i in range(10):
+    r=random.randrange(1,5)
+    if r==1:
+       mc.setBlocks(x,y,z,x+4,y,z,1)
+       x=x+4
+    elif r==2:
+       mc.setBlocks(x,y,z,x-4,y,z,89)
+       x=x-4  
+    elif r==3:
+       mc.setBlocks(x,y,z,x,y,z+4,35)
+       z=z+4 
+    elif r==4:
+       mc.setBlocks(x,y,z,x,y,z-4,57)
+       z=z-4
+
+import time
+while True:
+    mc.executeCommand("time add 50")
+    time.sleep(0.05)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while True:
+    hits=mc.events.pollProjectileHits()
+    if len(hits)>0:
+        hit=hits[0]
+        x,y,z=hit.pos.x,hit.pos.y,hit.pos.z
+        mc.createExplosion(x,y,z,5)
+
+
+
+
+def func():
+    globalstring2="我在內層"
+func()
+print(string2)
+    
+from random import randrange
+x,y,z=mc.player.getTilePos()
+
+
+for j in range(20):
+    r=randrange(0,16)
+    z=z+1
+    mc.setBlock(x,y,z,35,r)
+    
+    
+   
+for i in range(20):
+    x,y,z,=mc.player.getTilePos() 
+    x=x+i
+    
+    for j in range(20):  
+        r=randrange(0,16)
+        mc.setBlock(x,y,z,35,r)
+        z=z+1
+        
+        
+
+from random import randrange
+r=randrange(1,16)
+while True:
+    hits=mc.events.pollBlockHits()
+    if len(hits)>0:
+        hit=hits[0]
+        block=mc.getBlockWithData(hit.pos)
+        data=block.data
+        if data==r:
+            mc.postToChat("恭喜你找到我>///<")
+            mc.setBlock(hit.pos,57)
+            break
+        elif data<r:
+            mc.postToChat("更大的子ID")
+        else: 
+            mc.postToChat("更小的子ID")
+        
+from time import time           
+def LinearSearch():
+    r = randrange(1, 16)
+    sTime = time()
+    for i in range(100000001):
+       if r == i:
+           print("找到答案了!是"+str(i))
+           print("線性搜尋法:花了"+str(time()-sTime) + "秒")
+           break
+LinearSearch()
+
+
+
+def BinarySearch():
+    r = randrange(1, 16)
+    sTime = time()
+    low = 0
+    upper = 10000000
+    
+    while low <= upper:
+        mid = (low + upper) // 2
+        if mid < r:
+            low = mid +1
+            
+        elif mid > r:
+            upper = mid - 1
+        else:
+            print("找到答案了!是"+str(i))
+            print("二元搜尋法:花了"+str(time()-sTime) + "秒")
+            return
+BinarySearch()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+x,y,z = mc.player.getTilePos()
+base = 18
+height = (base//2)+1
+
+for i in range(height):
+    x1 = x + i
+    y1 = y + i
+    z1 = z + i
+    
+    x2 = x + base - i
+    #y與y2相同
+    z2 = z + base - i
+    mc.setBlocks(x1, y1, z1, x2, y1, z2,57)
